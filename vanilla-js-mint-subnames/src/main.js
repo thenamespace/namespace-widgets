@@ -1,16 +1,19 @@
 import { walletConnectModal } from "./wallet-connect"
+import asd from "./styles";
+import { watchAccount, disconnect, getAccount } from '@wagmi/core'
 
-const connectBtn = document.createElement("btn")
-connectBtn.addEventListener("click", () => {
+let connectedAddress;
+
+const btn = document.createElement("button");
+btn.classList.add("connect-btn");
+btn.addEventListener("click", () => {
+    console.log("clicked!");
     walletConnectModal.open();
 })
 
-const main = document.createElement("div");
-main.innerHTML(`
-   <button>Connect</button>
-`)
 
-const body = document.getElementsByTagName("body")[0];
-body.appendChild(main);
-body.appendChild(connectBtn);
+const main = async() => {
 
+    const isConnected = getAccount().address;
+    console.log(isConnected);
+}

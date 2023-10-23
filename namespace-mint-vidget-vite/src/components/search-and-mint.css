@@ -1,0 +1,25 @@
+.subname-widget-input {
+    font-size: 13px;
+}
+
+.subname-widget-input::placeholder {
+    font-size: 13px;
+}
+
+.subnames-suggestions-container {
+    max-height: 200px;
+    overflow-x: auto;
+}
+
+.subnames-suggestions-container .subname-option {
+    padding: 6px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.subname-option:hover {
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+}

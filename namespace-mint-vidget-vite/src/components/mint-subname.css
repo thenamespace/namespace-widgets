@@ -1,0 +1,27 @@
+.subname-minting-container .registration-title {
+    font-size: 15px;
+    font-weight: medium;
+    line-height: 1.4;
+}
+
+.subname-minting-container .registration-subtitle {
+    font-size: 13px;
+    color: rgb(172, 172, 172);
+    line-height: 1.1;
+}
+
+.subname-minting-container .txt-blue {
+    color: #1677ff;
+}
+.subname-minting-container .txt-bold {
+    font-weight: bold;
+}
+
+.subname-minting-container .mint-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.subname-minting-container .btn100w {
+    width: 100%;
+}

@@ -1,0 +1,24 @@
+.namespace-widget-container .user-profile {
+    min-width: 120px;
+    max-width: 220px;
+    display: flex;
+    min-height: 30px;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    padding: 6px;
+    border-radius: 50px;
+}
+
+.namespace-widget-container input {
+    height: 35px !important;
+}
+
+.namespace-widget-container .user-profile .avatar {
+   border-radius: 50px;
+}
+
+.namespace-widget-container .user-profile .name-loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+ }
