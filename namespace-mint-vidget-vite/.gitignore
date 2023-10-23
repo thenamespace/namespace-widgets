@@ -19,6 +19,9 @@ dist-ssr
 .DS_Store
 *.suo
 *.ntvs*
+node_modules
+dist
+test-build
 *.njsproj
 *.sln
 *.sw?
