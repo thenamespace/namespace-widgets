@@ -6,7 +6,7 @@ const mainnet = {
 
 const goerli = {
     ensRegistry: "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
-    mintController: "0xcd9a4dD88674d6C212A1Be36aA4aE46A240E90E6",
+    mintController: "0x06301Fc37E10BbCf2ed63e4584CcF8449b7675bf",
     publicResolver: "0xd7a4F6473f32aC2Af804B3686AE8F1932bC35750",
 }
 

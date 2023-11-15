@@ -21,7 +21,7 @@ const REGISTRATION_COMPLETED = 5;
 const publicResolverAddress = addresses[ENV.network].publicResolver
 let _interval;
 
-export const MintSubname = ({ parentListing, labelName, onCancel }) => {
+export const MintSubname = ({ parentListing, labelName, ethPrice, ethPriceSignature, onCancel }) => {
 
     const [step, setStep] = useState(NOT_STARTED);
     const { publicClient } = useWeb3Clients();
@@ -52,7 +52,7 @@ export const MintSubname = ({ parentListing, labelName, onCancel }) => {
                 clearInterval(_interval);
                 _interval = null;
             }
-        } 
+        }
     }, [step])
 
     const onTimerCompleted = () => {
@@ -68,7 +68,9 @@ export const MintSubname = ({ parentListing, labelName, onCancel }) => {
                 label: labelName,
                 secret: "secret",
                 subnameOwner: subnameOwner,
-                resolver: publicResolverAddress
+                resolver: publicResolverAddress,
+                ethPrice,
+                ethPriceSignature
             }
             const txHash = await makeCommitment(commitment);
             setWaitingForWallet(false)
@@ -95,7 +97,9 @@ export const MintSubname = ({ parentListing, labelName, onCancel }) => {
                 secret: "secret",
                 subnameOwner: subnameOwner,
                 resolver: publicResolverAddress,
-                price
+                price,
+                ethPrice,
+                ethPriceSignature
             }
             setWaitingForWallet(true)
             const tx = await mintSubname(commitment);
@@ -192,7 +196,7 @@ export const MintSubname = ({ parentListing, labelName, onCancel }) => {
                             type="primary"
                             size="large"
                             onClick={() => _makeCommitment()}>Confirm</Button>
-                        <Button size="large" style={{width:"50%"}} onClick={() => onCancel()}>
+                        <Button size="large" style={{ width: "50%" }} onClick={() => onCancel()}>
                             Cancel
                         </Button>
                     </>}

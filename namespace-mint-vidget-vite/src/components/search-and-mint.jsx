@@ -17,10 +17,14 @@ export const SearchAndMint = ({ connectedAddress }) => {
         isStarted: false,
     });
     const [suggestions, setSuggestions] = useState([]);
+    const [ethPrice, setEthPrice] = useState(0);
+    const [ethPriceSignature, setEthPriceSignature] = useState("");
 
     useEffect(() => {
         getMintableListings().then(listings => {
-            setInitialSuggestions(listings)
+            setInitialSuggestions(listings.listings);
+            setEthPrice(listings.signedPrice.ethPriceInCents);
+            setEthPriceSignature(listings.signedPrice.priceSignature);
         })
     }, [])
 
@@ -70,7 +74,7 @@ export const SearchAndMint = ({ connectedAddress }) => {
             const sorted = mintableListings.sort((a, b) => {
                 const firstContains = a.name.includes(parentName);
                 const secondContains = b.name.includes(parentName);
-               
+
                 if (firstContains && !secondContains) {
                     return -1;
                 } else if (!firstContains && secondContains) {
@@ -122,6 +126,9 @@ export const SearchAndMint = ({ connectedAddress }) => {
             <MintSubname
                 onCancel={() => cancelMintProcess()}
                 parentListing={mintProcess.parentListing}
-                labelName={mintProcess.labelName} />}
+                labelName={mintProcess.labelName}
+                ethPrice={ethPrice}
+                ethPriceSignature={ethPriceSignature}
+            />}
     </>
 }
