@@ -1,4 +1,5 @@
 .namespace-widget-container {
+    font-family: Satoshi;
     position: fixed;
     bottom: 25px;
     right: 25px;
@@ -6,6 +7,14 @@
     /* width: 100px;
     height: 100px; */
     /* background-color: red; */
+}
+
+.namespace-widget-container * {
+    font-family: Satoshi !important;
+}
+
+.namespace-widget-container button {
+    font-weight: bold;
 }
 
 .namespace-widget-container .powered-by-namespace {

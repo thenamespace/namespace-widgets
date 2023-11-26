@@ -1,3 +1,19 @@
+.subname-minting-container * {
+    font-family: "Satoshi";
+}
+.subname-minting-container {
+    position: relative;
+}
+.subname-minting-container .close-icon{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    color: grey;
+    cursor: pointer;
+    font-size: 12px;
+    z-index: 400;
+}
+
 .subname-minting-container .registration-title {
     font-size: 15px;
     font-weight: medium;
@@ -24,4 +40,38 @@
 
 .subname-minting-container .btn100w {
     width: 100%;
+}
+
+.subname-loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    flex-direction: column;
+}
+.subname-taken-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+    flex-direction: column;
+}
+
+
+.mint-error-screen {
+    display: flex;
+    flex-direction: column;
+}
+
+.mint-error-screen .ant-typography {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.mint-error-screen .debug-message {
+    max-height: 150px;
+    overflow-y: scroll;
+    font-weight: 11px;
 }

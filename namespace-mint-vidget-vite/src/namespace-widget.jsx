@@ -1,4 +1,4 @@
-import { Button, Typography } from "antd";
+import { Button, Spin, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { WalletConnector } from "./web3/wallect-connector";
 import { useAccount, useDisconnect } from "wagmi";
@@ -37,7 +37,7 @@ const NamespaceWidgetContent = () => {
         </div>
         <Button type="primary" className="widget-button" onClick={() => setContentVisible(!isContentVisible)}>
             <img src={ENV.CDN + "/ninja-logo.png"} width="40px" height="40px"></img>
-            <Typography color="white" weight="bold">Namespace</Typography>
+            <Typography.Text color="white" weight="bold" style={{color:"white", fontWeight: 600}}>Namespace</Typography.Text>
             {isContentVisible ? <FaChevronDown /> : <FaChevronUp />}
         </Button>
     </div>
@@ -45,7 +45,7 @@ const NamespaceWidgetContent = () => {
 
 const LoadingScreen = () => {
     return <div className="connect-page-container">
-        <p>LOADING!!!!</p>
+        <Spin/>
     </div>
 }
 
@@ -58,7 +58,7 @@ const ConnectScreen = () => {
         <div className="powered-by-namespace">
             <img src={ENV.CDN + "/ninja-logo.png"} width="20px" height="20px"></img>
             <Typography level={4}>Powered by <a href="https://app.namespace.ninja"
-                target="_blank">Namespace.ninja©</a></Typography>
+                target="_blank">namespace.ninja©</a></Typography>
         </div>
     </div>
 }
@@ -107,7 +107,7 @@ const ConnectedScreen = ({ connectedAddress, publicClient }) => {
         <div className="powered-by-namespace">
             <img src={ENV.CDN + "/ninja-logo.png"} width="20px" height="20px"></img>
             <Typography level={4}>Powered by <a href="https://app.namespace.ninja"
-                target="_blank">Namespace.ninja©</a></Typography>
+                target="_blank">namespace.ninja©</a></Typography>
         </div>
     </div>
 }

@@ -98,13 +98,14 @@ export const SearchAndMint = ({ connectedAddress }) => {
         setMintProcess({
             isStarted: false
         })
+        onSearch("");
     }
 
     return <>
         {!mintProcess.isStarted && <>
             <div style={{ textAlign: "center", margin: 15 }}>
                 <Typography style={{ fontSize: 15, fontWeight: "bold" }}>Find your perfect subname</Typography>
-                <Typography style={{ fontSize: 12, color: "#ACACAC" }}>Type at least 2 characters</Typography>
+                <Typography style={{ fontSize: 12, fontWeight: 600, color: "#ACACAC" }}>Type at least 2 characters</Typography>
             </div>
             <Input
                 value={labelValue}
