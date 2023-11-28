@@ -1,8 +1,7 @@
 name: Publish namespace-widget
-on:
-  push:
-    branches:
-      - widgets
+on: 
+  workflow_dispatch:
+  
 jobs:
   upload:
     runs-on: ubuntu-latest
@@ -29,9 +28,9 @@ jobs:
       
       - uses: BetaHuhn/do-spaces-action@v2
         with:
-          access_key: ${{ secrets.SPACES_ACCESS_KEY}}
+          access_key: ${{ secrets.SPACES_ACCESS_KEY }}
           secret_key: ${{ secrets.SPACES_SECRET_KEY }}
           space_name: namespace-widgets
           space_region: fra1
           source: ./namespace-mint-vidget-vite/dist
-          out_dir: test
+          out_dir: namespace-vite-widget
