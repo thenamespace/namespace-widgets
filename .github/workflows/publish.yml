@@ -1,0 +1,37 @@
+name: Publish namespace-widget
+on:
+  push:
+    branches:
+      - widgets
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@master
+
+      - name: Setup node and npm
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build widget
+        run: |
+          cd namespace-mint-vidget-vite
+          yarn install
+          yarn build
+      
+      - uses: BetaHuhn/do-spaces-action@v2
+        with:
+          access_key: ${{ secrets.SPACES_ACCESS_KEY}}
+          secret_key: ${{ secrets.SPACES_SECRET_KEY }}
+          space_name: namespace-widgets
+          space_region: fra1
+          source: ./namespace-mint-vidget-vite/dist
+          out_dir: test
